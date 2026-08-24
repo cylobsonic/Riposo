@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="theme-color"
+    content="#0d0f12"
+  >
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  >
+
+  <meta
+    name="apple-mobile-web-app-title"
+    content="Riposo"
+  >
+
+  <title>Riposo</title>
+
+  <link
+    rel="manifest"
+    href="manifest.json"
+  >
+  
+  <link
+    rel="apple-touch-icon"
+	href="icons/icon-192.png"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+<body>
+  <main class="app">
+    <h1>RIPOSO</h1>
+
+    <section id="activeView">
+      <div id="status" class="status">Pronto</div>
+
+      <div id="timer" class="timer">00:00:00</div>
+	  <div id="estimate" class="estimate">00:00</div>
+
+      <button id="startBtn" class="primary">
+        INIZIA RIPOSO
+      </button>
+
+      <button id="stopBtn" class="danger hidden">
+        FINE RIPOSO
+      </button>
+    </section>
+
+    <section id="resultView" class="result hidden">
+
+      <div class="result-row">
+        <span>Durata effettiva</span>
+        <strong id="actualDuration">—</strong>
+      </div>
+
+      <div class="result-row highlight">
+        <span>Da inserire nel foglio</span>
+        <strong id="roundedDuration">—</strong>
+      </div>
+
+      <button id="newBtn" class="secondary">
+        NUOVO RIPOSO
+      </button>
+
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+
+<script>
+  if ("serviceWorker" in navigator) {
+
+    window.addEventListener(
+      "load",
+      () => {
+
+        navigator.serviceWorker.register(
+          "service-worker.js"
+        );
+
+      }
+    );
+
+  }
+</script>
+
+</body>
+</html>

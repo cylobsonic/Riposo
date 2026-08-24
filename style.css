@@ -1,0 +1,285 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  display: grid;
+  place-items: center;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    system-ui,
+    sans-serif;
+
+  background: #0d0f12;
+  color: #f5f5f5;
+}
+
+
+/* ---------------------------------------------------------
+   CONTENITORE PRINCIPALE
+   --------------------------------------------------------- */
+
+.app {
+  width: min(92vw, 440px);
+  padding: 36px 28px;
+
+  text-align: center;
+}
+
+
+/* ---------------------------------------------------------
+   TITOLO
+   --------------------------------------------------------- */
+
+h1 {
+  margin: 0 0 42px;
+
+  font-size: 1.8rem;
+  font-weight: 600;
+
+  letter-spacing: .22em;
+}
+
+
+/* ---------------------------------------------------------
+   STATO
+   --------------------------------------------------------- */
+
+.status {
+  margin-bottom: 14px;
+
+  color: #8f969f;
+
+  font-size: .95rem;
+  font-weight: 500;
+
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+
+/* ---------------------------------------------------------
+   CRONOMETRO
+   --------------------------------------------------------- */
+
+.timer {
+  margin-bottom: 42px;
+
+  font-family:
+    "SF Mono",
+    "Roboto Mono",
+    "Cascadia Mono",
+    monospace;
+
+  font-size: clamp(3.2rem, 15vw, 5.5rem);
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: .04em;
+
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------
+   STIMA ASSENZA / RECUPERO
+   --------------------------------------------------------- */
+
+.estimate {
+  margin-top: -24px;
+  margin-bottom: 36px;
+
+  min-height: 24px;
+
+  color: #8f969f;
+
+  font-family:
+    "SF Mono",
+    "Roboto Mono",
+    "Cascadia Mono",
+    monospace;
+
+  font-size: 1.05rem;
+  font-weight: 500;
+
+  letter-spacing: .04em;
+
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ---------------------------------------------------------
+   PULSANTI
+   --------------------------------------------------------- */
+
+button {
+  width: 100%;
+  min-height: 68px;
+
+  border: none;
+  border-radius: 18px;
+
+  font: inherit;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  letter-spacing: .08em;
+
+  cursor: pointer;
+
+  transition:
+    transform .12s ease,
+    opacity .12s ease;
+}
+
+
+button:active {
+  transform: scale(.97);
+}
+
+
+/* START */
+
+.primary {
+  background: #35d07f;
+  color: #07130c;
+
+  box-shadow:
+    0 8px 24px rgba(53, 208, 127, .18);
+}
+
+
+/* STOP */
+
+.danger {
+  background: #ff5656;
+  color: #210000;
+
+  box-shadow:
+    0 8px 24px rgba(255, 86, 86, .18);
+}
+
+
+/* NUOVO RIPOSO */
+
+.secondary {
+  margin-top: 32px;
+
+  background: #24282e;
+  color: #f5f5f5;
+}
+
+
+/* ---------------------------------------------------------
+   RISULTATO
+   --------------------------------------------------------- */
+
+.result {
+  margin-top: 4px;
+}
+
+
+/* Etichette */
+
+.result-row {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: 22px 16px;
+
+  border-bottom: 1px solid #282c32;
+}
+
+
+.result-row span {
+  color: #8f969f;
+
+  font-size: .85rem;
+  font-weight: 500;
+
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+
+/* Valori */
+
+.result-row strong {
+  font-family:
+    "SF Mono",
+    "Roboto Mono",
+    "Cascadia Mono",
+    monospace;
+
+  font-size: 2rem;
+  font-weight: 500;
+
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ---------------------------------------------------------
+   RISULTATO PRINCIPALE
+   --------------------------------------------------------- */
+
+.highlight {
+  margin-top: 18px;
+
+  padding: 28px 18px;
+
+  border:
+    1px solid #383d45;
+
+  border-radius: 20px;
+
+  background: #171a1f;
+}
+
+
+.highlight strong {
+  font-size: 2.5rem;
+}
+
+
+/* ---------------------------------------------------------
+   NASCOSTO
+   --------------------------------------------------------- */
+
+.hidden {
+  display: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   SCHERMI PICCOLI
+   --------------------------------------------------------- */
+
+@media (max-width: 380px) {
+
+  .app {
+    padding:
+      28px 20px;
+  }
+
+  h1 {
+    margin-bottom: 34px;
+    font-size: 1.6rem;
+  }
+
+  .timer {
+    margin-bottom: 34px;
+  }
+
+  button {
+    min-height: 62px;
+  }
+}
