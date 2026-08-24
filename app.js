@@ -8,7 +8,7 @@ const STORAGE_KEY = "riposoState";
 const RIPOSO_BASE_MINUTI = 180;
 
 // Modalità test
-const TEST_MODE = true;
+const TEST_MODE = false;
 
 // Durata fittizia del riposo, in minuti.
 // Esempi:
