@@ -8,7 +8,7 @@ const STORAGE_KEY = "riposoState";
 const RIPOSO_BASE_MINUTI = 180;
 
 // Modalità test
-const TEST_MODE = true;
+const TEST_MODE = false;
 
 // Durata fittizia del riposo, in minuti.
 // Esempi:
@@ -17,7 +17,7 @@ const TEST_MODE = true;
 // 180 = 3:00
 // 195 = 3:15
 // 225 = 3:45
-const TEST_ELAPSED_MINUTES = 164;
+const TEST_ELAPSED_MINUTES = 194;
 
 const statusEl = document.getElementById("status");
 const timerEl = document.getElementById("timer");
@@ -34,6 +34,12 @@ const actualDurationEl =
 
 const roundedDurationEl =
   document.getElementById("roundedDuration");
+  
+const startTimeEl =
+  document.getElementById("startTime");
+
+const endTimeEl =
+  document.getElementById("endTime");
 
 const newBtn = document.getElementById("newBtn");
 
@@ -354,7 +360,11 @@ function showReady() {
  * ---------------------------------------------------------
  */
 
-function showResult(durationMilliseconds) {
+function showResult(
+  durationMilliseconds,
+  startTimestamp,
+  endTimestamp
+) {
 
   if (displayTimer) {
 
@@ -365,7 +375,12 @@ function showResult(durationMilliseconds) {
 
   activeView.classList.add("hidden");
   resultView.classList.remove("hidden");
-
+  
+  startTimeEl.textContent =
+    formatTime(startTimestamp);
+	
+  endTimeEl.textContent =
+    formatTime(endTimestamp);
 
   actualDurationEl.textContent =
     formatDuration(durationMilliseconds);
@@ -374,6 +389,20 @@ function showResult(durationMilliseconds) {
   roundedDurationEl.textContent =
   getResultText(
     durationMilliseconds
+  );
+}
+
+function formatTime(timestamp) {
+
+  const date =
+    new Date(timestamp);
+
+  return date.toLocaleTimeString(
+    "it-IT",
+    {
+      hour: "2-digit",
+      minute: "2-digit"
+    }
   );
 }
 
@@ -459,8 +488,10 @@ const endTimestamp =
 
 
     showResult(
-      durationMilliseconds
-    );
+	  durationMilliseconds,
+	  state.startTimestamp,
+	  endTimestamp
+	);
   }
 );
 
