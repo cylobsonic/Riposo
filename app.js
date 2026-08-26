@@ -415,7 +415,11 @@ stopBtn.addEventListener(
   "click",
   () => {
 
-    const state =
+    if (!confirm("Terminare il riposo?")) {
+      return;
+    }
+	
+	const state =
       loadState();
 
 
