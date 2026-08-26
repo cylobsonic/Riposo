@@ -8,7 +8,7 @@ const STORAGE_KEY = "riposoState";
 const RIPOSO_BASE_MINUTI = 180;
 
 // Modalità test
-const TEST_MODE = false;
+const TEST_MODE = true;
 
 // Durata fittizia del riposo, in minuti.
 // Esempi:
@@ -191,7 +191,7 @@ function getResultText(durationMilliseconds) {
 
   if (rounded === 0) {
 
-    return "00:00";
+    return "";
   }
 
 
@@ -340,7 +340,7 @@ function showReady() {
   statusEl.textContent = "Pronto";
 
   timerEl.textContent = "00:00:00";
-  estimateEl.textContent = "00:00";
+  estimateEl.textContent = "";
 
 
   startBtn.classList.remove("hidden");
