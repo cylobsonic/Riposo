@@ -1,4 +1,4 @@
-const CACHE_NAME = "riposo-v0.3.4";
+const CACHE_NAME = "riposo-v0.3.5";
 
 const FILES_TO_CACHE = [
   "./",

@@ -549,8 +549,10 @@ function restore() {
   ) {
 
     showResult(
-      state.durationMs
-    );
+  state.durationMs,
+  state.startTimestamp,
+  state.endTimestamp
+);
 
     return;
   }
